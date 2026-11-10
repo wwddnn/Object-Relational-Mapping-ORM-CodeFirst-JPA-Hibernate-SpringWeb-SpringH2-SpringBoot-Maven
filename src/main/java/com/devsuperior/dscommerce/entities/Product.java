@@ -3,6 +3,7 @@ package com.devsuperior.dscommerce.entities;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -23,6 +24,9 @@ public class Product {
         joinColumns = @JoinColumn(name = "product_id"), //nome do campo da tabela de juncao que vai ser a chave estrangeira da tabela Product
         inverseJoinColumns = @JoinColumn(name = "category_id")) //nome do campo da tabela de juncao que vai ser a chave estrangeira da tabela Category
     private Set<Category> categories = new HashSet<>();
+
+    @OneToMany(mappedBy = "id.product") //relacionamento com a classe OrderItem, e que usa o id para ir na classe de associacao OrderItemPK
+    private Set<OrderItem> items = new HashSet<>();
 
     public Product() {
     }
@@ -68,6 +72,14 @@ public class Product {
 
     public Set<Category> getCategories() { //metodo get para o relacionamento com Category
         return categories;
+    }
+
+    public Set<OrderItem> getItems() { //metodo get para o relacionamento com OrderItem que vai ate a classe de associacao OrderItemPK
+        return items;
+    }
+
+    public List<Order> getOrders() { //metodo get para ir nos items e trazer com o getOrder a lista de orders que esta na classe de associacao OrderItemPK
+        return items.stream().map(x -> x.getOrder()).toList();
     }
 
     @Override

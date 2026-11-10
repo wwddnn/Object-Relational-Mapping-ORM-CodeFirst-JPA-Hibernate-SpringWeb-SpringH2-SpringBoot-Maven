@@ -14,7 +14,7 @@ public class OrderItemPK {
     private Order order;
 
     @ManyToOne //significa que muitos itens de pedido podem estar associados a um produto
-    @JoinColumn(name = "prooduct_id")
+    @JoinColumn(name = "product_id")
     private Product product;
 
     public OrderItemPK() {
