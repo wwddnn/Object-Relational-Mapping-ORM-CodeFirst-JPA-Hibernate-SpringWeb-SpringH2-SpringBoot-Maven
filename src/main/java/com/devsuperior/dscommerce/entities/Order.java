@@ -20,6 +20,9 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User client;
 
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    private Payment payment;
+
     public Order(){
     }
 
@@ -60,5 +63,13 @@ public class Order {
 
     public void setClient(User client) {
         this.client = client;
+    }
+
+    public Payment getPayment() { //metodo get para o relacionamento com Payment
+        return payment;
+    }
+
+    public void setPayment(Payment payment) { //metodo set para o relacionamento com Payment
+        this.payment = payment;
     }
 }

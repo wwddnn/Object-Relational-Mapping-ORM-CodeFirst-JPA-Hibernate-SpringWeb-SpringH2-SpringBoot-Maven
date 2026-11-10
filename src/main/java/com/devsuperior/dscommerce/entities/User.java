@@ -3,6 +3,8 @@ package com.devsuperior.dscommerce.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +21,9 @@ public class User {
     private String phone;
     private LocalDate birthDate;
     private String password;
+
+    @OneToMany(mappedBy = "client")
+    private List<Order> orders = new ArrayList<>();
 
     public User() {
     }
@@ -80,6 +85,10 @@ public class User {
         this.password = password;
     }
 
+    public List<Order> getOrders() { //get para a lista de orders
+        return orders;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -92,4 +101,5 @@ public class User {
     public int hashCode() {
         return Objects.hashCode(id);
     }
+
 }
