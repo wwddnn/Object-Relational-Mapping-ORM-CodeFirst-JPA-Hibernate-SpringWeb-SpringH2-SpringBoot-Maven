@@ -20,7 +20,7 @@ public class Order {
     private OrderStatus status;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "client_id")
     private User client;
 
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL) // opcao CascadeType.ALL significa as operacoes de persistencia, atualizacao ou exclusao serao propagadas para Payment

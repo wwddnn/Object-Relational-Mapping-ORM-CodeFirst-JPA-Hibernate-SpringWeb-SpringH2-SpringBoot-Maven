@@ -18,6 +18,7 @@ public class Product {
     @Column(columnDefinition = "TEXT") //esse campo deve ser um texto com descricao longa e que excede o limite padrao de caracteres
     private String description;
     private Double price;
+    private String imgUrl;
 
     @ManyToMany
     @JoinTable(name = "tb_product_category", //nome para a nova tabela de juncao criada no banco
@@ -68,6 +69,14 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public Set<Category> getCategories() { //metodo get para o relacionamento com Category
