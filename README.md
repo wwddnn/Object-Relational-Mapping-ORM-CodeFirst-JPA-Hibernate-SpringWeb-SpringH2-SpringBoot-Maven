@@ -5,7 +5,8 @@
 
 ## 📌 Sobre o Repositório
 
-Este repositório foi criado para organizar o código sobre o assunto mapeamento objeto-relacional
+Este repositório foi criado para organizar o código sobre o assunto mapeamento objeto-relacional.
+
 O objetivo principal é documentar:
 * 💡 Como ocorre o mapeamento objeto-relacional através do código Java.
 * 🎯 Usamos o princípio do Code-First onde escrevemos o código Java primeiro direto na IDE Intellij, e através de anotações as entidades criadas no código (objetos) criamos tabelas no banco de dados relacional (relacional).
