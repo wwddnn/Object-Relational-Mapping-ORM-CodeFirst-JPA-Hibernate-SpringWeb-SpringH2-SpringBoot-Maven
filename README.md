@@ -16,7 +16,7 @@ O objetivo principal é documentar:
 
 1. **Clone o repositório:**
    ```bash
-   git clone git@github.com:wwddnn/InversionOfControlAndDependencyInjection-usingSpringBoot-Maven-SpringInitializr.git
+   git clone git@github.com:wwddnn/Object-Relational-Mapping-ORM-CodeFirst-JPA-Hibernate-SpringWeb-SpringH2-SpringBoot-Maven.git
 
    ---
 
